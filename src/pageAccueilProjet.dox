@@ -1,13 +1,32 @@
 /*! \mainpage Code Explorer
- *
- * \section presentation-projet Présentation du projet
- *
- * Code Explorer a pour objectif de proposer des fonctionnalités d'analyse de codes source.
- * 
- * Ce dépôt contient uniquement une spécification des fonctionnalités imaginées pour extraire les éléments 
- * significatifs structurant un programme. 
- *
- * A terme, l'objectif est de permettre de charger un code source à partir d'un fichier puis de décomposer 
- * ce code source sous forme d'un ensemble d'objets liés représentant la structure du code en termes 
- * de variables, de commentaires, de structures conditionnelles, de structures itératives, etc.
+ 
+
+  \section presentation-projet Présentation du projet
+ 
+  Code Explorer a pour objectif de proposer des fonctionnalités d'analyse de codes source.
+  
+  Ce dépôt contient uniquement une spécification des fonctionnalités imaginées pour extraire les éléments 
+  significatifs structurant un programme. 
+ 
+  A terme, l'objectif est de permettre de charger un code source à partir d'un fichier puis de décomposer 
+  ce code source sous forme d'un ensemble d'objets liés représentant la structure du code en termes 
+  de variables, de commentaires, de structures conditionnelles, de structures itératives, etc.
+ 
+ 
+ 
+  \section elements-modelisation Eléments de modélisation
+  Le dossier modelisation contient un diagramme des classes décrivant les différents éléments constituant 
+  un code source une fois celui-ci analysé et décomposé par Code Explorer :
+ 
+  \htmlonly
+   <br/>
+   <a href="diagrammeClasses.jpg">
+       <img src="diagrammeClasses.jpg" width="90%">
+    </a>
+    <br/> <br/>
+  \endhtmlonly
+ 
+ 
+  Le dossier modelisation contient également un diagramme objet qui illustre la façon dont un code source 
+  donné en exemple peut être décomposé par Code Explorer.
  */
