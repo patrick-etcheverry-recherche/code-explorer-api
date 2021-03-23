@@ -40,9 +40,28 @@
    être des TraitementSimple ou des TraitementCompose.
 */
  
+
+
+
+
 /*! \page modele-structure-de-controle Structures de contrôle
-  Even more info.
+ Cette partie du diagramme décrit les caractéristiques des structures de contrôle qu'on peut retrouver dans un code.
+
+ \n
+  \image html 3-diagramme-classes-structure-controle.jpg  width=90%
+  \image rtf 3-diagramme-classes-structure-controle.jpg  width=90%
+  \image latex 3-diagramme-classes-structure-controle.jpg width=\textwidth 
+\n
+
+ \section classe-structure-controle La classe StructureDeControle
+ - Une StructureDeControle peut être une StructureSimple ou une StructureImbriquee ;
+ - Une StructureSimple est soit une StructureConditionnelle soir une StructureIterative ;
+ - Une StructureImbriquee est une StructureDeControle contenant une ou plusieurs StructureDeControle
+    qui, à leur tour, peuvent être des StructureSimple ou à nouveau des StructureImbriquee.
 */
+
+
+
 
 
 /*! \page modele-structure-conditionnelle Structures conditionnelles
