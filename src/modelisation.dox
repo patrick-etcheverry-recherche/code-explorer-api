@@ -5,7 +5,7 @@
  \n
   \image html 2-diagramme-classes-code.jpg  width=90%
   \image rtf 2-diagramme-classes-code.jpg  width=90%
-  \image latex 2-diagramme-classes-code.jpg width=\textwidth 
+  \image latex 2-diagramme-classes-code.pdf width=\textwidth 
 
 
  \section classe-code La classe Code
@@ -50,7 +50,7 @@
  \n
   \image html 3-diagramme-classes-structure-controle.jpg  width=90%
   \image rtf 3-diagramme-classes-structure-controle.jpg  width=90%
-  \image latex 3-diagramme-classes-structure-controle.jpg width=\textwidth 
+  \image latex 3-diagramme-classes-structure-controle.pdf width=\textwidth 
 \n
 
  \section classe-structure-controle La classe StructureDeControle
@@ -65,8 +65,98 @@
 
 
 /*! \page modele-structure-conditionnelle Structures conditionnelles
-  Even more info.
+ Cette partie du diagramme décrit les caractéristiques des structures conditionnelles qu'on peut retrouver dans un code.
+
+ \n
+  \image html 4-diagramme-classes-structure-conditionnelle.jpg  width=65%
+  \image rtf 4-diagramme-classes-structure-conditionnelle.jpg  width=65%
+  \image latex 4-diagramme-classes-structure-conditionnelle.pdf width=\textwidth 
+\n
+
+ \section classe-structure-conditionnelle La classe StructureConditionnelle
+  Une StructureConditionnelle est :
+  - soit une StructureSi,
+  - soit une StructureSiSinon, 
+  - soit une StructureSiSiSinon, 
+  - soit une StructureSwitch.
+
+ \section classe-structure-si La classe StructureSi
+  - La classe StructureSi représente une structure conditionnelle simple (pas de sinon).
+  - Une StructureSi est composée d'une ConditionSi qui prend la forme d'une expression booléene;
+  - Si l'expression booléenne de la ConditionSi est vérifiée, la ConditionSi déclenche alors l'exécution 
+    d'un ou plusieurs Traitement. 
+
+ \section classe-structure-si-sinon La classe StructureSiSinon
+  - La classe StructureSiSinon représente une structure conditionnelle de type \c if - \c else ou équivalent.
+  - Une StructureSiSinon est composée d'une ConditionSi qui prend la forme d'une expression booléene 
+    et d'une ConditionSinon correspondant à l'inverse de l'expression booléenne exprimée dans la ConditionSi ;
+  - Si l'expression booléenne de la ConditionSi est vérifiée, la ConditionSi déclenche alors l'exécution 
+    d'un ou plusieurs Traitement. 
+  - Si l'expression booléenne de la ConditionSi n'est pas vérifiiée, la ConditionSinon déclenche alors l'exécution 
+    d'un ou plusieurs Traitement. 
+
+A noter que les structures conditionnelles du type ci-dessous (C, C++, Java, PHP...) sont assimilées à une 
+StructureSiSinon :
+  \code{.cpp}
+  return (age >= 18 ? "majeur" : "mineur");
+  \endcode
+
+
+ \section classe-structure-si-si La classe StructureSiSi
+  La classe StructureSiSi représente une structure conditionnelle :
+  - avec des ConditionSi multiples situées à un même niveau de hierarchie ;
+  - sans ConditionSinon.
+
+  Ce type de structure correspond par exemple à l'instruction :
+  - \c if - \c elseif  en PHP ;
+  - \c if - \c elsif en ADA.
+
+  Une StructureSiSi est composée d'au moins deux ConditionSi qui prennent chacune la forme d'une expression booléene. 
+  A chacune de ces expressions booléenne correspond 1 ou plusieurs Traitement qui sont déclenchés lorsque l'expression
+  booléene est vérifiée. 
+  
+  A noter que si aucune expression booléene n'est vérifiée, aucun traitement n'est déclenché.
+
+
+ \section classe-structure-si-si-sinon La classe StructureSiSiSinon
+  La classe StructureSiSiSinon représente une structure conditionnelle :
+  - avec des ConditionSi multiples situées à un même niveau de hierarchie ;
+  - avec une ConditionSinon.
+
+  Ce type de structure correspond par exemple à l'instruction :
+  - \c if - \c elseif \c else en PHP ;
+  - \c if - \c elsif \c else en ADA.
+
+  Une StructureSiSiSinon est composée :
+  - d'au moins deux ConditionSi qui prennent chacune la forme d'une expression booléene. 
+    A chacune de ces expressions booléenne correspond un ou plusieurs Traitement qui sont déclenchés 
+    lorsque l'expression booléene est vérifiée.
+  - d'une ConditionSinon à laquelle sont associés un ou plusieurs Traitement qui sont déclenchés si aucune 
+    expression booléene des ConditionSi n'est vérifiée. 
+
+ A noter que contrairement à une StructureSiSi, une StructureSiSiSinon déclenche toujours au moins 
+ un traitement du fait de la présence d'une ConditionSinon.
+
+
+ \section classe-structure-switch La classe StructureSwitch
+  La classe StructureSwitch représente une structure conditionnelle basée sur la valeur d'une expression. 
+  Elle correspond à une structure \c switch dans la plupart des langages de programmation (C++, java, php...) 
+  ou encore \c case en ADA.
+
+  Ce type de structure est composée : 
+  - d'une expression dont la valeur doit être évaluée ;
+  - de plusieurs ConditionSwitch qui sont chacune associée au déclenchement d'un ou plusieurs Traitement ;
+  - éventuellement d'une ConditionSinon qui pourra déclencher un ou plusieurs Traitement si aucune ConditionSwitch n'est vérifiée.
+
+  Chaque ConditionSwitch est caractérisée par une valeur. Si cette valeur est égale à la valeur de l'expression de la 
+  StructureSwitch, alors les Traitement associés à la ConditionSwitch concernée sont déclenchés.
+
 */
+
+
+
+
+
 
 /*! \page modele-structure-iterative Structures itératives
   Even more info.
