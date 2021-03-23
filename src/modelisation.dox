@@ -159,8 +159,20 @@ StructureSiSinon :
 
 
 /*! \page modele-structure-iterative Structures itératives
-  Even more info.
+ Cette partie du diagramme décrit les caractéristiques des structures itératives qu'on peut retrouver dans un code.
+
+ \n
+  \image html 5-diagramme-classes-structure-iterative.jpg  width=90%
+  \image rtf 5-diagramme-classes-structure-iterative.jpg  width=90%
+  \image latex 5-diagramme-classes-structure-iterative.pdf width=\textwidth 
+\n
+
+
+A terminer...
 */
+
+
+
 
 /*! \page diagramme-objet Exemple de diagramme objet
   Even more info.
