@@ -426,5 +426,19 @@ StructureSiSinon :
 
 
 /*! \page diagramme-objet Exemple de diagramme objet
-  Even more info.
+  
+  Cette page présente un exemple d'instanciation du diagramme de classes de %Code Explorer.
+  
+  
+  \section code-exemple Code exemple utilisé pour instancier le modèle
+  
+  \include mainProf.cpp
+
+  
+  
+  \section diagramme-objet Diagramme objet correspondant
+
+  Le diagramme objet permettant de décrire la structure du code C++ présenté ci-dessus est le suivant :
+
+  \htmlinclude page-html-diagramme-objet.html
 */
