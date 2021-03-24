@@ -167,8 +167,259 @@ StructureSiSinon :
   \image latex 5-diagramme-classes-structure-iterative.pdf width=\textwidth 
 \n
 
+ \section classe-structure-iterative La classe StructureIterative
+  Une StructureIterative permet de répéter l'exécution de un ou plusieurs Traitement. 
+  On distingue deux familles de structures itératives :
+  - les IterationAvecNombreDeRepetitionsConnu ;
+  - les IterationAvecNombreDeRepetitionsInconnu.
 
-A terminer...
+
+ \section classe-iteration-avec-nbre-repet-connu La classe IterationAvecNombreDeRepetitionsConnu
+  La classe IterationAvecNombreDeRepetitionsConnu représente des structures itératives permettant 
+  d'exécuter un ou plusieurs Traitement un nombre de fois connu.
+
+  Ce type de structure itérative correspond généralement à une instruction de type \c for (C++, Java, Python, PHP...), 
+  \c foreach (javascript, PHP...) ou encore \c PERFORM \c N \c TIMES en Cobol.
+    
+ Une IterationAvecNombreDeRepetitionsConnu intègre généralement :
+ - une borne de départ correspondant à la première itération et une borne d'arrivée 
+   à atteindre correspondant à la dernière itération ; 
+ - une ConditionDeBoucle qui prend généralement la forme d'une ConditionDeContinuation exprimant le fait que 
+   l'IterationAvecNombreDeRepetitionsConnu perdure tant que la borne d'arrivée n'est pas atteinte. 
+ 
+ Une IterationAvecNombreDeRepetitionsConnu peut intégrer un IndiceDeBoucle (instruction \c for) mais
+ ce n'est pas obligatoire (instructions \c foreach ou \c PERFORM \c N \c TIMES de Cobol).
+ 
+
+ \section classe-indice-de-boucle La classe IndiceDeBoucle
+  La classe IndiceDeBoucle est utilisée au sein d'IterationAvecNombreDeRepetitionsConnu. Cet indice représente 
+  la progression de l'itération sur l'intervalle [borne de départ ; borne d'arrivée] 
+  de l'IterationAvecNombreDeRepetitionsConnu.
+
+  Un IndiceDeBoucle est généralement représenté par un entier ou un caractère appartenant à [borne de départ ; borne d'arrivée].
+  Au fur et à mesure des itérations, cet IndiceDeBoucle progresse :
+  - soit de manière croissante (boucle croissante), soit de manière décroissante (boucle décroissante) ;
+  - d'une valeur (pas) définie par le programmeur.
+
+  Dans une IterationAvecNombreDeRepetitionsConnu codée via une instruction \c for, l'IndiceDeBoucle
+  est utilisé pour exprimer la ConditionDeContinuation de l'itération. 
+
+  A noter également que l'IndiceDeBoucle peut être exploité dans le Traitement répété. Dans ce cas,
+  les valeurs de la borne de départ et de la borne d'arrivée ont une importance capitale. A l'inverse,
+  si l'IndiceDeBoucle n'est pas utilisé dans le Traitement répété les valeurs de la borne de départ 
+  et de la borne d'arrivée ne sont pas importantes du moment qu'elles permettent de réaliser le 
+  nombre de répétitions souhaité.
+
+
+ \section classe-iteration-avec-nbre-repet-inconnu La classe IterationAvecNombreDeRepetitionsInconnu
+
+  Cette classe représente des structures itératives pour lesquelles le nombre de répétitions n'est pas connu à l'avance. 
+  Le nombre de répétitions est dépendant d'une ou plusieurs ConditionDeBoucle qui, selon les cas, peuvent prendre
+  la forme d'une ConditionDeContinuation ou d'une ConditionDArret. 
+
+  On recense plusieurs familles d'IterationAvecNombreDeRepetitionsInconnu, ces familles se distinguant en fonction
+  du **moment** où la ou les ConditionDeBoucle sont évaluées :
+  - IterationAvecConditionAuDebut : La ou les ConditionDeBoucle sont évaluées en même temps et au début de l'itération ;
+  - IterationAvecConditionALaFin : La ou les ConditionDeBoucle sont évaluées en même temps et à la fin de l'itération ;
+  - IterationAvecConditionAuMilieu : La ou les ConditionDeBoucle sont évaluées en même temps et au milieu de l'itération ;
+  - IterationAvecPlusieursConditionADifferentsMoments : Il y a plusieurs ConditionDeBoucle et elles sont évaluées à des
+    moments différents au sein de l'itération.
+
+
+ \section classe-iteration-avec-condition-au-debut La classe IterationAvecConditionAuDebut
+ Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées 
+ **au début** de l'itération.
+
+  Généralement, ce type d'itération se code avec une instruction \c while et la ConditionDeBoucle correspond alors 
+  à une ConditionDeContinuation :
+  \code{.cpp}
+  while (nbEssai < 10)
+  {
+    // Effectuer une nouvel essai
+    ...
+    ...
+  }
+  \endcode
+
+  On peut toutefois trouver d'autres formes (moins appropriées) dans lesquelles l'IterationAvecConditionAuDebut 
+  est codée avec un \c while ou un \c for dévié de leur usage initial. Dans ce cas, la ConditionDeBoucle prend 
+  la forme d'une ConditionDArret :
+  \code{.cpp}
+  while (true)
+  {
+    if (nbEssais >= 10)
+    {
+       break;
+    }
+
+    // Effectuer une nouvel essai
+    ...
+    ...
+  }
+  \endcode
+
+  ou encore :
+  \code{.cpp}
+  for ( ; ; )
+  {
+    if (nbEssais >= 10)
+    {
+       break;
+    }
+
+    // Effectuer une nouvel essai
+    ...
+    ...
+  }
+  \endcode  
+
+
+
+\section classe-iteration-avec-condition-en-fin La classe IterationAvecConditionEnFin
+ Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées 
+ **à la fin** de l'itération.
+
+  Généralement, ce type d'itération se code avec une instruction \c do \c .. \c while et la ConditionDeBoucle 
+  correspond alors à une ConditionDeContinuation :
+  \code{.cpp}
+  do 
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+  }
+  while (nombre <= 0);
+  \endcode
+
+  On peut toutefois trouver d'autres formes (moins appropriées) dans lesquelles l'IterationAvecConditionEnFin 
+  est codée avec un \c while ou un \c for dévié de leur usage initial. Dans ce cas, la ConditionDeBoucle prend 
+  la forme d'une ConditionDArret :
+  \code{.cpp}
+  while (true)
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+
+    if (nombre > 0)
+    {
+      break;
+    }
+  }
+  \endcode
+
+  ou encore :
+  \code{.cpp}
+  for ( ; ; )
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+
+    if (nombre > 0)
+    {
+      break;
+    }
+  }
+  \endcode  
+
+
+\section classe-iteration-avec-condition-au-milieu La classe IterationAvecConditionAuMilieu
+ Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées 
+ **en plein milieu** de l'itération, c'est-à-dire, ni au début, ni à la fin.
+
+  Peu de langages de programmation proposent des instructions spécialisées pour traiter ce cas de figure. Le 
+  langage Ada propose par exemple l'instruction \c loop \c .. \c end \c loop qui ne présume pas de la 
+  position de la condition d'arrêt (contrairement à un \c while ou un \c do \c .. \ while) :
+  \code
+  loop
+     Put("Entrer un nombre positif : ") ; 
+     Get-Line(nombre);
+     exit when nombre > 0;
+     nbreSaisiesErronees := nbreSaisiesErronees + 1;
+  end loop;
+  \endcode
+  
+  \n
+  Avec la plupart des langages de programmation qui ne proposent pas d'instruction spécialisée pour traiter
+  ce cas de figure, il est nécessaire de dévier une instruction répétitive de son usage initial pour la 
+  transformer en itération infinie et dans laquelle on insère, au niveau du corps, une ConditionDArret :
+  \code{.cpp}
+  while (true)
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+
+    if (nombre > 0)
+    {
+      break;
+    }
+
+    nbreSaisiesErronees++;
+  }
+  \endcode
+
+  ou encore :
+  \code{.cpp}
+  for ( ; ; )
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+
+    if (nombre > 0)
+    {
+      break;
+    }
+  }
+  \endcode 
+
+
+
+  \section classe-iteration-avec-plusieurs-conditions La classe IterationAvecConditionsADifferentsMoments
+ Cette classe représente tous les autres cas de figure qui ne rentrent pas dans les cas précédents. 
+
+ Ce type d'itération est caractérisé par la présence de plusieurs ConditionDeBoucle qui peuvent prendre
+ la forme de ConditionDeContinuation et/ou de ConditionDArret, bien qu'il soit recommandé de ne pas les 
+ mélanger. Ci-dessous quelques exemples :
+
+
+ Itération composée uniquement de ConditionDArret :
+  \code{.cpp}
+  while (true)
+  {
+    if (nbEssais >= 10)
+    {
+      break;
+    }
+
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+    
+    if (nombre > 0)
+    {
+      break;
+    }
+  
+    nbEssais++;
+  }
+  \endcode 
+
+ 
+ La même itération mélangeant ConditionDeContinuation et ConditionDArret :
+  \code{.cpp}
+  while (nbEssais < 10)
+  {
+    cout << "Entrer un nombre positif : ";
+    cin >> nombre;
+    
+    if (nombre > 0)
+    {
+      break;
+    }
+  
+    nbEssais++;
+  }
+  \endcode 
+
+
+
 */
 
 
