@@ -36,6 +36,21 @@ public:
  */
     Code (string cheminFichier);
 
+    /**
+ * \brief    Indique le chemin d'accès du fichier contenant le code source.
+ * \return   Une chaine de caractères correspondant au chemin d'accès du fichier.
+ */
+    String getCheminFichier ();
+
+
+    /**
+ * \brief      Définit le chemin d'accès du fichier contenant le code source.
+ * \param[in]  cheminFichier  une chaîne de caractères représentant le chemin d'accès au fichier contenant le Code.
+ */
+    void setCheminFichier (string cheminFichier);
+
+
+
 /**
  * \brief    Identifie toutes les librairies utilisées dans le code source.
  * \param    critereTri   Critère utilisé pour ordonner les librairies retournées \n
