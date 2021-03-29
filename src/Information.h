@@ -67,14 +67,14 @@ public:
  * \brief    Indique le type d'une information (int, String, int[]...).
  * \return   Un objet Type correspondant au type de l'information.
  */
-    Type getType ();
+    Type* getType ();
 
 
     /**
  * \brief    Définit le type d'une information.
  * \param[in]  type  Le type de l'information. \n
  */
-    void setType (Type type);
+    void setType (Type* type);
 
 
 
@@ -83,16 +83,54 @@ public:
  * \return   Un objet Commentaire correspondant à la description éventuelle de l'information. \n
  *           Si aucun commentaire n'est attaché à la déclaration de l'information, la valeur \c null est retournée.
  */
-    Commentaire getCommentaire ();
+    Commentaire* getCommentaire ();
 
 
     /**
  * \brief    Définit un commentaire associé à la déclaration d'une information.
  * \param[in]  commentaire  Le type de l'information. \n
  */
-    void setCommentaire (Commentaire commentaire);
+    void setCommentaire (Commentaire* commentaire);
 
 
+    /**
+ * \brief    Indique le ou les traitements pour lesquels l'information joue le rôle de donnée.
+ * \return   Un ensemble d'objets Traitement pour lesquels l'information joue le rôle de donnée.
+ *           Si aucun traitement n'utilise cette information en tant que donnée, la valeur \c null est retournée.
+ */
+    Traitement* getTraitementsEnDonnee ();
+
+    /**
+ * \brief    Ajoute un traitement à la liste des traitements qui utilisent l'information en donnée.
+ * \param[in]  traitementIn  Le traitement à ajouter à a liste des traitements qui utilisent l'information en donnée. \n
+ */
+    void addTraitementEnDonnee (Traitement* traitementIn);
+
+    /**
+ * \brief    Supprime le traitement de la liste des traitements qui utilisent l'information en donnée.
+ * \param[in]  traitement  Le traitement à supprimer de la liste traitements qui utilisent l'information en donnée. \n
+ */
+    void removeTraitementEnDonnee (Traitement* traitement);
+
+
+    /**
+ * \brief    Indique le ou les traitements pour lesquels l'information joue le rôle de résultat.
+ * \return   Un ensemble d'objets Traitement pour lesquels l'information joue le rôle de résultat.
+ *           Si aucun traitement ne produit cette information en tant que résultat, la valeur \c null est retournée.
+ */
+    Traitement* getTraitementsEnResultat ();
+
+    /**
+ * \brief    Ajoute un traitement à la liste des traitements qui utilisent l'information en résultat.
+ * \param[in]  traitementOut  Le traitement à ajouter à la liste des traitements qui utilisent l'information en résultat. \n
+ */
+    void addTraitementEnResultat (Traitement* traitementOut);
+
+    /**
+ * \brief    Supprime le traitement de la liste des traitements qui utilisent l'information en résultat.
+ * \param[in]  traitement  Le traitement à supprimer de la liste traitements qui utilisent l'information en résultat. \n
+ */
+    void removeTraitementsEnResultat (Traitement* traitement);
 
 
     /**
@@ -151,14 +189,6 @@ public:
     bool estUnIndiceDeBoucle ();
 
 
-
-
-
-
-
-
-
-
 protected:
     /**
  *   \var string nom
@@ -182,19 +212,30 @@ protected:
 
 
     /**
- *   \var Type type
+ *   \var Type* type
  *   \brief Le type de l'information.
  */
     Type* type;
 
 
     /**
- *   \var Commentaire commentaire
+ *   \var Commentaire* commentaire
  *   \brief Le commentaire éventuel attaché à la variable lors de sa déclaration.
  */
     Commentaire* commentaire;
 
 
+    /**
+ *   \var Traitement* enDonneeDe
+ *   \brief Le ou les traitements pour lesquels l'information joue le rôle de donnée.
+ */
+    Traitement* enDonneeDe;
+
+    /**
+ *   \var Traitement* enResultatDe
+ *   \brief Le ou les traitements pour lesquels l'information joue le rôle de résultat.
+ */
+    Traitement* enResultatDe;
 
 };
 #endif
