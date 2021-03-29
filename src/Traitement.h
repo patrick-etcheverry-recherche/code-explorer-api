@@ -147,6 +147,24 @@ public:
     void removeSousTraitement (Traitement* sousTraitement);
 
 
+    /**
+ * \brief    Indique si le traitement est une entrée.
+ * \return   \c true si le traitement est une entrée, \c false sinon.
+ */
+    bool estUneEntree ();
+
+    /**
+ * \brief    Indique si le traitement est une sortie.
+ * \return   \c true si le traitement est une sortie, \c false sinon.
+ */
+    bool estUneSortie ();
+
+    /**
+ * \brief    Indique si le traitement est un calcul.
+ * \return   \c true si le traitement est un calcul, \c false sinon.
+ */
+    bool estUnCalcul ();
+
 protected:
 
     /**
