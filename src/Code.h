@@ -42,7 +42,6 @@ public:
  */
     String getCheminFichier ();
 
-
     /**
  * \brief      Définit le chemin d'accès du fichier contenant le code source.
  * \param[in]  cheminFichier  une chaîne de caractères représentant le chemin d'accès au fichier contenant le Code.
@@ -52,15 +51,17 @@ public:
 
 
 /**
+ * \brief    Identifie le nombre de librairies utilisées dans le code.
+ * \return   Un entier positif ou nul indiquant le nombre de librairies utilisée dans le code.
+ */
+    unsigned short int getNbreLibrairies();
+
+/**
  * \brief    Identifie toutes les librairies utilisées dans le code source.
- * \param    critereTri   Critère utilisé pour ordonner les librairies retournées \n
- *           Deux valeurs possibles :
- *           - "alphabetique" pour récupérer les librairies triées de manière croissante par leur nom ;
- *           - "ordreApparition" pour récupérer les librairies triées selon leur ordre d'apparition dans le code.
  * \return   Un tableau d'objets Librairie représentant tous les librairies utilisées dans le code. \n
  *           Le tableau retourné peut être vide si aucune librairie n'est utilisée dans le code.
  */
-    Librairie* getLibrairies(string critereTri);
+    Librairie* getLibrairies();
 
     /**
  * \brief    Ajoute une librairie à la liste des librairies utilisées par le programme.
@@ -76,19 +77,45 @@ public:
 
 
 
+
 /**
- * \brief    Identifie toutes les informations utilisées dans le code source.
+ * \brief    Identifie le nombre d'informations utilisées dans le code.
+ * \param[in]  typeInformation  Désigne le type d'information à compter. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour compter toutes les informations ;  \n
+ *             - "const" pour compter uniquement les constantes; \n
+ *             - "magic" pour compter uniquement les nombres magiques; \n
+ *             - "var" pour compter uniquement les variables; \n
+ *             - "simpleVar" pour compter uniquement les variables simples; \n
+ *             - "composedVar" pour compter uniquement les variables structurées;    \n 
+ *             - "accu" pour compter uniquement les variables de type accumulateur;  \n
+ *             - "count" pour compter uniquement les variables de type compteur; \n
+ *             - "index" pour compter uniquement les variables de type indice de boucle.  
+ * \return   Un entier positif ou nul indiquant le nombre de d'informations utilisée dans le code.
+ */
+    unsigned short int getNbreInformations(string typeInformation);
+
+/**
+ * \brief    Identifie les informations utilisées dans le code source.
  * \details  Les informations identifiées peuvent être de tout type : il peut s'agir \n
  *           variables, de constantes, de compteurs, d'indice de boucles etc.
- * \param[in]    critereTri   Critère utilisé pour ordonner les informations retournées \n
- *           Deux valeurs possibles :
- *           - "alphabetique" pour récupérer les informations triées de manière croissante par leur nom ;
- *           - "ordreApparition" pour récupérer les informations triées selon leur ordre d'apparition dans le code.
- * \return   Un tableau d'objets Information représentant tous les informations utilisées dans le code. \n
- *           Le tableau retourné peut être vide si aucune information n'est utilisée dans le code.
+  * \param[in]  typeInformation  Désigne le type d'information à récupérer. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour récupérer toutes les informations ; \n
+ *             - "const" pour récupérer uniquement les constantes; \n
+ *             - "magic" pour récupérer uniquement les nombres magiques; \n
+ *             - "var" pour récupérer uniquement les variables; \n
+ *             - "simpleVar" pour récupérer uniquement les variables simples; \n
+ *             - "composedVar" pour récupérer uniquement les variables structurées;  \n   
+ *             - "accu" pour récupérer uniquement les variables de type accumulateur;  \n
+ *             - "count" pour récupérer uniquement les variables de type compteur; \n
+ *             - "index" pour récupérer uniquement les variables de type indice de boucle. 
+ * \return   Un tableau d'objets Information représentant toutes les informations utilisées dans le code
+ *           ou uniquement celles d'un certain type. \n
+ *           Le tableau retourné peut être vide si aucune information du type demandé n'est utilisée dans le code.
  */
 
-    Information* getInformations(string critereTri);
+    Information* getInformations(string typeInformation);
 
     /**
  * \brief    Ajoute une information à la liste des informations utilisées par le programme.
@@ -103,18 +130,38 @@ public:
     void removeInformation (Information* information);
 
 
+
+/**
+ * \brief    Identifie le nombre de traitements utilisés dans le code.
+ * \param[in]  typeTraitement  Désigne le type de traitement à compter. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour compter tous les traitements mis en place dans le code ; \n
+ *             - "simple" pour compter uniquement les traitements simples; \n
+ *             - "composed" pour compter uniquement les traitements composés; \n
+ *             - "in" pour compter uniquement les traitements de type "entrée"; \n
+ *             - "out" pour compter uniquement les traitements de type "sortie"; \n
+ *             - "calc" pour compter uniquement les traitements de type "calcul".
+ * \return   Un entier positif ou nul indiquant le nombre de traitements du type demandé.
+ */
+    unsigned short int getNbreTraitements(string typeTraitement);
+
+
 /**
  * \brief    Identifie touts les traitements utilisés dans le code source.
  * \details  Les traitements identifiés peuvent être de tout type : il peut s'agir \n
  *           de procédures, de fonctions, voire de blocs de code nommés via un commentaire
- * \param[in]    critereTri   Critère utilisé pour ordonner les traitements retournés \n
- *           Deux valeurs possibles :
- *           - "alphabetique" pour récupérer les traitements triés de manière croissante par leur nom ;
- *           - "ordreApparition" pour récupérer les traitements triés selon leur ordre d'apparition dans le code.
+ * \param[in]  typeTraitement  Désigne le type de traitement à récupérer. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour récupérer tous les traitements mis en place dans le code ; \n
+ *             - "simple" pour récupérer uniquement les traitements simples; \n
+ *             - "composed" pour récupérer uniquement les traitements composés; \n
+ *             - "in" pour récupérer uniquement les traitements de type "entrée"; \n
+ *             - "out" pour récupérer uniquement les traitements de type "sortie"; \n
+ *             - "calc" pour récupérer uniquement les traitements de type "calcul".
  * \return   Un tableau d'objets Traitement représentant tous les traitements mis en place dans le code. \n
  *           Le tableau retourné peut être vide si aucun traitement n'est défini dans le code.
  */
-    Traitement* getTraitements(string critereTri);
+    Traitement* getTraitements(string typeTraitement);
 
 
     /**
@@ -131,16 +178,33 @@ public:
 
 
 /**
+ * \brief    Identifie le nombre de traitements utilisés dans le code.
+  * \param[in]  typeCommentaire  Désigne le type de commentaire à compter. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour récupérer tous les commentaires présents dans le code ; \n
+ *             - "code" pour récupérer uniquement le commentaire global attaché en entête du code; \n
+ *             - "information" pour récupérer uniquement les commentaires associés à des informations; \n
+ *             - "traitement" pour récupérer uniquement les commentaires associés à des traitements.
+ * \return   Un entier positif ou nul indiquant le nombre de commentaires du type demandé.
+ */
+    unsigned short int getNbreCommentaires(string typeCommentaire);
+
+
+/**
  * \brief    Identifie touts les commentaires utilisés dans le code source.
- * \details  Les commentaites identifiés peuvent être de tout type : il peut s'agir \n
- *           de commentaires sur une ligne, sur plusieurs lignes (bloc de commentaires)
- *           ou encore de commentaires structurés à destination d'outils type javadoc ou
- *           Doxygen par exemple.
+ * \details  Les commentaires identifiés peuvent être de tout type : il peuvent 
+ *           porter sur des informations, sur des traitements ou sur le code dans sa globalité.
+  * \param[in]  typeCommentaire  Désigne le type de commentaire à récupérer. 
+ *             Les valeurs possibles pour ce paramètre sont : \n
+ *             - "all" pour récupérer tous les commentaires présents dans le code ; \n
+ *             - "code" pour récupérer uniquement le commentaire global attaché en entête du code;\n
+ *             - "information" pour récupérer uniquement les commentaires associés à des informations;\n
+ *             - "traitement" pour récupérer uniquement les commentaires associés à des traitements.
  * \return   Un tableau d'objets Commentaire représentant tous les commentaires insérés dans le code. \n
  *           Les commentaires sont ordonnés selon leur ordre d'apparition dans le code.
  *           Le tableau retourné peut être vide si aucun commentaire n'est défini dans le code.
  */
-    Commentaire getCommentaires();
+    Commentaire getCommentaires(string typeCommentaire);
 
 
     /**
