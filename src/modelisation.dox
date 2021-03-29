@@ -1,6 +1,8 @@
 /*! \page modele-code Classes de haut niveau
+    \brief    Cette partie du diagramme décrit les éléments de haut niveau structurant un code source : code, information,
+              traitement, variable....
 
- Cette partie du diagramme décrit les éléments de haut niveau structurant un code source :
+  Cette partie du diagramme décrit les éléments de haut niveau structurant un code source :
 
  \n
   \image html 2-diagramme-classes-code.jpg  width=90%
@@ -45,6 +47,8 @@
 
 
 /*! \page modele-structure-de-controle Structures de contrôle
+    \brief  Cette partie du diagramme décrit les caractéristiques générales des structures de contrôle qu'on peut retrouver dans un code..
+
  Cette partie du diagramme décrit les caractéristiques des structures de contrôle qu'on peut retrouver dans un code.
 
  \n
@@ -65,6 +69,8 @@
 
 
 /*! \page modele-structure-conditionnelle Structures conditionnelles
+    \brief  Cette partie du diagramme décrit les propriétés des structures conditionnelles..
+
  Cette partie du diagramme décrit les caractéristiques des structures conditionnelles qu'on peut retrouver dans un code.
 
  \n
@@ -159,6 +165,8 @@ StructureSiSinon :
 
 
 /*! \page modele-structure-iterative Structures itératives
+    \brief  Cette partie du diagramme décrit les propriétés des structures itératives..
+
  Cette partie du diagramme décrit les caractéristiques des structures itératives qu'on peut retrouver dans un code.
 
  \n
@@ -437,6 +445,7 @@ StructureSiSinon :
   
   
   \section diagramme-objet Diagramme objet correspondant
+  \brief  Cette section décrit un diagramme objet décrivant la structure d'un code C++ donné en exemple.. 
 
   Le diagramme objet permettant de décrire la structure du code C++ présenté ci-dessus est le suivant :
 
