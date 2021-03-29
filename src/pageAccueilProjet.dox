@@ -37,9 +37,11 @@ L'analyse du code source de départ doit permettre d'identifier les éléments u
   Le dossier modelisation contient un diagramme des classes décrivant les différents éléments constituant 
   un code source une fois celui-ci analysé et décomposé par %Code Explorer :
  
-  \image html 1-diagramme-classes-complet.jpg "Diagramme des classes de Code Explorer" width=90%
+
+  \htmlinclude page-html-diagramme-complet.html
   \image rtf 1-diagramme-classes-complet.jpg "Diagramme des classes de Code Explorer" width=90% 
   \image latex 1-diagramme-classes-complet.pdf "Diagramme des classes de Code Explorer" width=\textwidth
+  
 
   \n
   Le dossier modelisation contient également un diagramme objet qui illustre la façon dont un code source 
