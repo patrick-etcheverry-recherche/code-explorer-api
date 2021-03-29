@@ -60,7 +60,20 @@ public:
  * \return   Un tableau d'objets Librairie représentant tous les librairies utilisées dans le code. \n
  *           Le tableau retourné peut être vide si aucune librairie n'est utilisée dans le code.
  */
-    Librairie *getLibrairies(string critereTri);
+    Librairie* getLibrairies(string critereTri);
+
+    /**
+ * \brief    Ajoute une librairie à la liste des librairies utilisées par le programme.
+ * \param[in]  librairie  La librairie à ajouter à la liste des librairies utilisées dans le code. \n
+ */
+    void addLibrairie (Librairie* librairie);
+
+    /**
+ * \brief    Supprime la librairie de la liste des librairies utilisées dans le code.
+ * \param[in]  librairie  Le traitement à supprimer de la liste traitements qui utilisent l'information en résultat. \n
+ */
+    void removeLibrairie (Librairie* librairie);
+
 
 
 /**
@@ -75,8 +88,19 @@ public:
  *           Le tableau retourné peut être vide si aucune information n'est utilisée dans le code.
  */
 
-    Information *getInformations(string critereTri);
+    Information* getInformations(string critereTri);
 
+    /**
+ * \brief    Ajoute une information à la liste des informations utilisées par le programme.
+ * \param[in]  information  L'information à ajouter à la liste des informations utilisées dans le code. \n
+ */
+    void addInformation (Information* information);
+
+    /**
+ * \brief    Supprime l'information de la liste des informations utilisées dans le code.
+ * \param[in]  information  L'information à supprimer de la liste informations utilisées dans le code.
+ */
+    void removeInformation (Information* information);
 
 
 /**
@@ -90,8 +114,20 @@ public:
  * \return   Un tableau d'objets Traitement représentant tous les traitements mis en place dans le code. \n
  *           Le tableau retourné peut être vide si aucun traitement n'est défini dans le code.
  */
-    Traitement *getTraitements(string critereTri);
+    Traitement* getTraitements(string critereTri);
 
+
+    /**
+ * \brief    Ajoute un traitement à la liste des traitements présents dans le programme.
+ * \param[in]  traitement  Le traitement à ajouter à la liste des traitements mise en place dans le code.
+ */
+    void addTraitement (Traitement* traitement);
+
+    /**
+ * \brief    Supprime le traitement de la liste des traitements présents dans le code.
+ * \param[in]  traitement  Le traitement à supprimer de la liste traitements présents dans le code.
+ */
+    void removeTraitement (Traitement* traitement);
 
 
 /**
@@ -106,6 +142,19 @@ public:
  */
     Commentaire getCommentaires();
 
+
+    /**
+ * \brief    Ajoute un commentaire à la liste des commentaires présents dans le programme.
+ * \param[in]  commentaire  Le commentaire à ajouter à la liste des commentaires présents dans le code.
+ */
+    void addCommentaire (Commentaire* commentaire);
+
+    /**
+ * \brief    Supprime le commentaire de la liste des commentaires présents dans le code.
+ * \param[in]  commentaire  Le commentaire à supprimer de la liste des commentaires présents dans le code.
+ */
+    void removeCommentaire (Commentaire* commentaire);
+
 private:
     /**
     \var string cheminFichier
@@ -113,5 +162,18 @@ private:
            Exemple : "c:\dev\exo1\main.cpp"
 */
     string cheminFichier;
+
+    /**
+    \var Information* informations
+    \brief la liste des informations utlisées dans le code source
+*/
+    Information* informations;
+
+    /**
+    \var Traitement* traitements
+    \brief la liste des traitements présents dans le code source
+*/
+    Information* traitements;
+
 };
 #endif

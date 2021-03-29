@@ -16,8 +16,8 @@
 
 /** 
  *  \class Traitement
- *  \brief Une classe pour représenter les composants 
- *         d'un code source sous forme d'objets.
+ *  \brief Une classe pour représenter les traitements 
+ *         présents dans un code source.
  */
 class Traitement
 {
@@ -26,8 +26,24 @@ public:
  * \brief    Constructeur : construit un objet Traitement à partir de son nom.
  * \param[in] nom  Le nom du traitement. \n
  *           Par exemple : "Calculer périmètre"
+ * \param[in] code  Le code dans lequel le traitement est programmé.
  */
-    Traitement(String nom);
+    Traitement(String nom, Code* code);
+
+
+   /**
+ * \brief    Indique le code dans lequel le traitement est mis en place.
+ * \return   Un objet code correspondant au code dans lequel le traitement est programmé.
+ */
+   Code* getCode();
+
+   /**
+ * \brief    Définit le code dans lequel le traitement est programmé.
+ * \param[in]  code  Le code dans lequel le traitement est mis en place.
+ */
+   void setCode(Code* code);
+
+
 
 
     /**
@@ -54,7 +70,7 @@ public:
 
     /**
  * \brief    Ajoute une information à la liste des informations nécessaires pour exécuter le traitement.
- * \param[in]  donneeIn  L'information à ajouter à a liste des informations qui jouent le rôle de donnée pour le traitement. \n
+ * \param[in]  informationIn  L'information à ajouter à a liste des informations qui jouent le rôle de donnée pour le traitement. \n
  */
     void addDonnee (Information* informationIn);
 
@@ -74,7 +90,7 @@ public:
 
     /**
  * \brief    Ajoute une information à la liste des informations qui sont produites par le traitement.
- * \param[in]  InformationOut  L'information à ajouter à la liste des informations qui jouent le rôle de résultat pour le traitement. \n
+ * \param[in]  informationOut  L'information à ajouter à la liste des informations qui jouent le rôle de résultat pour le traitement. \n
  */
     void addResultat (Information* informationOut);
 
@@ -105,23 +121,40 @@ public:
     void removeTraitementApres (Traitement* traitement);
 
 
+    /**
+ * \brief    Indique si le traitement est composé ou pas.
+ * \return   \c true si le traitement est un traitement composé, \c false si le traitement est un traitement simple.
+ */
+    bool estCompose ();
 
+    /**
+ * \brief    Donne la liste des sous-traitements d'un traitement.
+ * \return   Les traitements considérés comme des sous-traitements du traitement.
+ *           Si le traitement n'est pas composé, la valeur \c null est retournée.
+ */
+    Traitement* getSousTraitements ();
 
+    /**
+ * \brief    Ajoute un sous-traitement à la liste des sous-traitements d'un traitement.
+ * \param[in]  sousTraitement  Le sous-traitement à ajouter à la liste des sous-traitements du traitement. \n
+ */
+    void addSousTraitement (Traitement* sousTraitement);
 
-
-
-
-
-
-
-
-
-
-
-
+    /**
+ * \brief    Supprime un sous-traitement de la liste des sous-traitements du traitement.
+ * \param[in]  sousTraitement  Le traitement à supprimer de la liste des sous-traitements du traitement. \n
+ */
+    void removeSousTraitement (Traitement* sousTraitement);
 
 
 protected:
+
+    /**
+ *   \var Code* code
+ *   \brief Le code dans lequel le traitement est programmé.  
+ */
+    Code* code;
+
     /**
  *   \var string nom
  *   \brief Le nom du traitement.  

@@ -29,10 +29,27 @@ public:
  *           et de sa convention de nommage
  * \param[in] nom  Le nom de l'information. \n
  *           Par exemple : "perimètre"
-  * \param[in] conventionNommage  La convention de nommage utilisée pour nommer l'information. \n
+ * \param[in] conventionNommage  La convention de nommage utilisée pour nommer l'information. \n
  *           Par exemple : "camelCase"
+ * \param[in] code  Le code dans lequel l'information est utilisée.
+ *          
  */
-    Information (String nom, String conventionNommage);
+    Information (String nom, String conventionNommage, Code* code);
+
+
+    /**
+ * \brief    Indique le code dans lequel l'information est utilisée.
+ * \return   Un cobjet code correspondant au code dans lequel l'information est utlisée.
+ */
+    Code* getCode ();
+
+
+    /**
+ * \brief    Définit le code dans lequel l'information est utilisée.
+ * \param[in]  code  Le code dans lequel l'information est utlisée.
+ */
+    void setCode (Code* code);
+
 
 
     /**
@@ -190,6 +207,13 @@ public:
 
 
 protected:
+
+    /**
+ *   \var Code* code
+ *   \brief Le code dans lequel l'information est utilisée.  
+ */
+    Code* code;
+
     /**
  *   \var string nom
  *   \brief Le nom de l'information.  

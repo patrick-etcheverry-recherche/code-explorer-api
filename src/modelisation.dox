@@ -444,7 +444,7 @@ StructureSiSinon :
 
   
   
-  \section diagramme-objet Diagramme objet correspondant
+  \section diagramme-objet-exemple Diagramme objet correspondant
   \brief  Cette section décrit un diagramme objet décrivant la structure d'un code C++ donné en exemple.. 
 
   Le diagramme objet permettant de décrire la structure du code C++ présenté ci-dessus est le suivant :
