@@ -67,7 +67,7 @@ public:
 
     /**
  * \brief    Indique la ou les informations qui sont nécessaires pour l'exécution du traitement.
- * \return   Un ensemble d'objets Information désignant les les informations qui joue le rôle de donnée pour le traitement.
+ * \return   Un ensemble d'objets Information désignant les informations qui joue le rôle de donnée pour le traitement.
  *           Si aucune information n'est en donnée du traitement, la valeur \c null est retournée.
  */
     Information* getResultats ();
@@ -83,6 +83,41 @@ public:
  * \param[in]  information  L'information à supprimer de la liste des informations qui jouent le rôle de résultat pour le traitement. \n
  */
     void removeResultat (Information* information);
+
+
+    /**
+ * \brief    Indique la ou les traitements qui sont exécutés après le traitement.
+ * \return   Un ensemble d'objets Traitement désignant les traitements qui s'exécutentaprès le traitement.
+ *           Si aucune traitement n'est exécuté après le traitement, la valeur \c null est retournée.
+ */
+    Traitement* getTraitementsApres ();
+
+    /**
+ * \brief    Ajoute un traitement à la liste des traitements qui s'exécutent après le traitement.
+ * \param[in]  traitementApres  Le traitement à ajouter à la liste des traitements qui s'exécutent après le traitement. \n
+ */
+    void addTraitementApres (Traitement* traitementApres);
+
+    /**
+ * \brief    Supprime un traitement de la liste des traitements qui s'exécutent après le traitement.
+ * \param[in]  traitement  Le traitement à supprimer de la liste des traitements qui s'exécutent après le traitement. \n
+ */
+    void removeTraitementApres (Traitement* traitement);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -101,7 +136,7 @@ protected:
 
 
     /**
- *   \var string donnees
+ *   \var Information* donnees
  *   \brief La liste des informations jouant le rôle de donnée pour le traitement.  
  *   \details Cet attribut représente la liste des informations jouant le rôle de donnée pour le traitement. \n
  *             Une information joue le rôle de donnée pour un traitement si sa valeur est nécessaire pour 
@@ -111,11 +146,20 @@ protected:
 
 
     /**
- *   \var string resultats
+ *   \var Information* resultats
  *   \brief La liste des informations produites par le traitement.  
  *   \details Cet attribut représente la liste des informations jouant le rôle de résultat pour le traitement. \n
  *             Une information est un résultat pour un traitement si sa valeur est calculée ou modifiée par le traitement.
  */
     Information* resultats;
+
+
+    /**
+ *   \var Traitement* sontApres
+ *   \brief La liste des traitements qui s'exécutent après le traitement.  
+ *   \details Cet attribut représente la liste des traitements exécutés après le traitement.
+ */
+    Traitement* sontApres;
+
 };
 #endif
