@@ -44,8 +44,6 @@ public:
    void setCode(Code* code);
 
 
-
-
     /**
  * \brief    Indique le nom du traitement.
  * \return   Une chaine de caractères correspondant au nom du traitement

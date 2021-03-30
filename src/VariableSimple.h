@@ -5,7 +5,7 @@
  * \brief     Spécifie les attributs et méthodes d'une classe VariableSimple.
  *
  * \details    Ce fichier décrit les caractéristiques d'une classe VariableSimple permettant de représenter
- *             des variables basiques (entier, caractèren, booléen...) utilisées dans un code. 
+ *             des variables basiques (entier, caractère, booléen...) utilisées dans un code. 
  */
 
 #ifndef VARIABLE_SIMPLE_H
@@ -15,7 +15,7 @@
 
 /** 
  *  \class VariableSimple
- *  \brief Une classe pour représenter les variables simples (entier, caractèren, booléen...) 
+ *  \brief Une classe pour représenter les variables simples (entier, caractère, booléen...) 
  *         utilisées dans un code source .
  */
 class VariableSimple : public Variable
