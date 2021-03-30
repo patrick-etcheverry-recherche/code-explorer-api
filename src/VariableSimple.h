@@ -22,7 +22,7 @@ class VariableSimple
 {
 public:
 /**
- * \brief    Constructeur : construit un objet variable.
+ * \brief    Constructeur : construit un objet variable simple.
  * \param[in] estInitialisee indique si la variable est initialisée, à la déclaration ou bien après la déclaration. 
  * \param[in] valDepart indique quelle est la valeur initiale de la variable si une telle valeur est définie. 
  */
