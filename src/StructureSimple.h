@@ -13,6 +13,8 @@
 #ifndef STRUCTURE_SIMPLE_H
 #define STRUCTURE_SIMPLE_H
 
+#include "StuctureDeControle.h"
+
 /** 
  *  \class StructureSimple
  *  \brief Une classe pour constuire et réprésenter les structures de contrôle utilisées dans un code. 
@@ -21,7 +23,7 @@
  *             Il s'agit ici d'une classe abstraite utilisée uniquement pour faciliter
  *             la modélisation de structures de contrôle imbriquées.
  */
-class StructureSimple
+class StructureSimple : public StructureDeControle
 {
 public:
   virtual ~StructureSimple() = 0;
