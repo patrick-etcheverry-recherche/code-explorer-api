@@ -55,7 +55,7 @@ public:
     /**
  * \brief    Indique le nom de l'information.
  * \return   Une chaine de caractères correspondant au nom de l'information
- *           ou la valeur \null si l'information ne possède pas de nom 
+ *           ou la valeur \c null si l'information ne possède pas de nom 
  *           (cas d'un nombre magique par exemple)
  */
     String getNom ();
