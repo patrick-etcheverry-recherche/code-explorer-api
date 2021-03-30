@@ -18,7 +18,7 @@
  *  \brief Une classe pour représenter les variables structurées (tableau, enregistrement, objet...)
  *         utilisées dans un code source .
  */
-class VariableStructuree
+class VariableStructuree : public Variable
 {
 public:
 /**

@@ -18,7 +18,7 @@
  *  \brief Une classe pour représenter les variables simples (entier, caractèren, booléen...) 
  *         utilisées dans un code source .
  */
-class VariableSimple
+class VariableSimple : public Variable
 {
 public:
 /**

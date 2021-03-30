@@ -5,7 +5,7 @@
  * \brief     Spécifie les attributs et méthodes d'une classe Variable.
  *
  * \details    Ce fichier décrit les caractéristiques d'une classe Variable. Il s'agit d'une
- *             classe abstraite utilisée pour représenter par la suite les variables structurées. 
+ *             classe utilisée pour représenter par la suite les variables structurées. 
  */
 
 #ifndef VARIABLE_H
@@ -21,10 +21,20 @@
 class Variable : public Information
 {
 public:
+
     /**
- * \brief    Indique si la variable est initialisée.
- * \return   \c true si la variable est initialisée, \c false sinon.
+ * \brief    Indique si la variable est une variable structurée (c'est-à-dire composée d'autres variables) 
+ *           ou pas.
+ * \return   \c true si la variable est une variable structurée, \c false sinon.
  */
-    virtual bool estInitialisee() = 0; // fonction virtuelle pure
+    bool getEstUneVariableStructuree(); 
+
+
+protected:
+    /**
+ *   \var bool estUneVariableStructuree
+ *   \brief Indique si la variable est une variable structurée contenant d'autres variables. 
+ */
+    bool estUneVariableStructuree;  
 };
 #endif
