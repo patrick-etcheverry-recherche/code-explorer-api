@@ -33,7 +33,7 @@ public:
  * \brief    Indique combien de structures de contrôles sont imbriquées dans la structure.
  * \return   un entier positif ou nul indiquant combien de structures de contrôles composent la structure imbriquée.
  */
-    unsigned int getNbreStructureImbriquees ();
+    unsigned int getNbreStructuresImbriquees ();
 
     /**
  * \brief    Indique quelles sont les structures de contrôle composant la structure.
