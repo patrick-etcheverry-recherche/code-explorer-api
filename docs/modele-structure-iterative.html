@@ -1,0 +1,154 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- For Mobile Devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+        <meta name="generator" content="Doxygen 1.8.13"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <title>Code Explorer: Structures itératives</title>
+        <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+        <script type="text/javascript" src="dynsections.js"></script>
+        <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+        <link href="doxygen.css" rel="stylesheet" type="text/css" />
+        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="jquery.smartmenus.js"></script>
+        <!-- SmartMenus jQuery Bootstrap Addon -->
+        <script type="text/javascript" src="jquery.smartmenus.bootstrap.js"></script>
+        <!-- SmartMenus jQuery plugin -->
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                      <span><img src=logo.png height="30" class="d-inline-block align-top" alt=""></span>
+                       &nbsp;
+                       Code Explorer 
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+            <div class="content" id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                            <div style="margin-bottom: 15px;">
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Structures itératives </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Cette partie du diagramme décrit les propriétés des structures itératives..</p>
+<p>Cette partie du diagramme décrit les caractéristiques des structures itératives qu'on peut retrouver dans un code.</p>
+<p><br />
+ </p><div class="image">
+<img src="5-diagramme-classes-structure-iterative.jpg" alt="5-diagramme-classes-structure-iterative.jpg" width="90%"/>
+</div>
+   <br />
+ </p>
+<h1><a class="anchor" id="classe-structure-iterative"></a>
+La classe StructureIterative</h1>
+<p>Une StructureIterative permet de répéter l'exécution de un ou plusieurs <a class="el" href="class_traitement.html" title="Une classe pour représenter les traitements présents dans un code source. ">Traitement</a>. On distingue deux familles de structures itératives :</p><ul>
+<li>les IterationAvecNombreDeRepetitionsConnu ;</li>
+<li>les IterationAvecNombreDeRepetitionsInconnu.</li>
+</ul>
+<h1><a class="anchor" id="classe-iteration-avec-nbre-repet-connu"></a>
+La classe IterationAvecNombreDeRepetitionsConnu</h1>
+<p>La classe IterationAvecNombreDeRepetitionsConnu représente des structures itératives permettant d'exécuter un ou plusieurs <a class="el" href="class_traitement.html" title="Une classe pour représenter les traitements présents dans un code source. ">Traitement</a> un nombre de fois connu.</p>
+<p>Ce type de structure itérative correspond généralement à une instruction de type <code>for</code> (C++, Java, Python, PHP...), <code>foreach</code> (javascript, PHP...) ou encore <code>PERFORM</code> <code>N</code> <code>TIMES</code> en Cobol.</p>
+<p>Une IterationAvecNombreDeRepetitionsConnu intègre généralement :</p><ul>
+<li>une borne de départ correspondant à la première itération et une borne d'arrivée à atteindre correspondant à la dernière itération ;</li>
+<li>une ConditionDeBoucle qui prend généralement la forme d'une ConditionDeContinuation exprimant le fait que l'IterationAvecNombreDeRepetitionsConnu perdure tant que la borne d'arrivée n'est pas atteinte.</li>
+</ul>
+<p>Une IterationAvecNombreDeRepetitionsConnu peut intégrer un IndiceDeBoucle (instruction <code>for</code>) mais ce n'est pas obligatoire (instructions <code>foreach</code> ou <code>PERFORM</code> <code>N</code> <code>TIMES</code> de Cobol).</p>
+<h1><a class="anchor" id="classe-indice-de-boucle"></a>
+La classe IndiceDeBoucle</h1>
+<p>La classe IndiceDeBoucle est utilisée au sein d'IterationAvecNombreDeRepetitionsConnu. Cet indice représente la progression de l'itération sur l'intervalle [borne de départ ; borne d'arrivée] de l'IterationAvecNombreDeRepetitionsConnu.</p>
+<p>Un IndiceDeBoucle est généralement représenté par un entier ou un caractère appartenant à [borne de départ ; borne d'arrivée]. Au fur et à mesure des itérations, cet IndiceDeBoucle progresse :</p><ul>
+<li>soit de manière croissante (boucle croissante), soit de manière décroissante (boucle décroissante) ;</li>
+<li>d'une valeur (pas) définie par le programmeur.</li>
+</ul>
+<p>Dans une IterationAvecNombreDeRepetitionsConnu codée via une instruction <code>for</code>, l'IndiceDeBoucle est utilisé pour exprimer la ConditionDeContinuation de l'itération.</p>
+<p>A noter également que l'IndiceDeBoucle peut être exploité dans le <a class="el" href="class_traitement.html" title="Une classe pour représenter les traitements présents dans un code source. ">Traitement</a> répété. Dans ce cas, les valeurs de la borne de départ et de la borne d'arrivée ont une importance capitale. A l'inverse, si l'IndiceDeBoucle n'est pas utilisé dans le <a class="el" href="class_traitement.html" title="Une classe pour représenter les traitements présents dans un code source. ">Traitement</a> répété les valeurs de la borne de départ et de la borne d'arrivée ne sont pas importantes du moment qu'elles permettent de réaliser le nombre de répétitions souhaité.</p>
+<h1><a class="anchor" id="classe-iteration-avec-nbre-repet-inconnu"></a>
+La classe IterationAvecNombreDeRepetitionsInconnu</h1>
+<p>Cette classe représente des structures itératives pour lesquelles le nombre de répétitions n'est pas connu à l'avance. Le nombre de répétitions est dépendant d'une ou plusieurs ConditionDeBoucle qui, selon les cas, peuvent prendre la forme d'une ConditionDeContinuation ou d'une ConditionDArret.</p>
+<p>On recense plusieurs familles d'IterationAvecNombreDeRepetitionsInconnu, ces familles se distinguant en fonction du <b>moment</b> où la ou les ConditionDeBoucle sont évaluées :</p><ul>
+<li>IterationAvecConditionAuDebut : La ou les ConditionDeBoucle sont évaluées en même temps et au début de l'itération ;</li>
+<li>IterationAvecConditionALaFin : La ou les ConditionDeBoucle sont évaluées en même temps et à la fin de l'itération ;</li>
+<li>IterationAvecConditionAuMilieu : La ou les ConditionDeBoucle sont évaluées en même temps et au milieu de l'itération ;</li>
+<li>IterationAvecPlusieursConditionADifferentsMoments : Il y a plusieurs ConditionDeBoucle et elles sont évaluées à des moments différents au sein de l'itération.</li>
+</ul>
+<h1><a class="anchor" id="classe-iteration-avec-condition-au-debut"></a>
+La classe IterationAvecConditionAuDebut</h1>
+<p>Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées au début** de l'itération.</p>
+<p>Généralement, ce type d'itération se code avec une instruction <code>while</code> et la ConditionDeBoucle correspond alors à une ConditionDeContinuation : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (nbEssai &lt; 10)</div><div class="line">{</div><div class="line">  <span class="comment">// Effectuer une nouvel essai</span></div><div class="line">  ...</div><div class="line">  ...</div><div class="line">}</div></div><!-- fragment --><p>On peut toutefois trouver d'autres formes (moins appropriées) dans lesquelles l'IterationAvecConditionAuDebut est codée avec un <code>while</code> ou un <code>for</code> dévié de leur usage initial. Dans ce cas, la ConditionDeBoucle prend la forme d'une ConditionDArret : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (<span class="keyword">true</span>)</div><div class="line">{</div><div class="line">  <span class="keywordflow">if</span> (nbEssais &gt;= 10)</div><div class="line">  {</div><div class="line">     <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="comment">// Effectuer une nouvel essai</span></div><div class="line">  ...</div><div class="line">  ...</div><div class="line">}</div></div><!-- fragment --><p>ou encore : </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> ( ; ; )</div><div class="line">{</div><div class="line">  <span class="keywordflow">if</span> (nbEssais &gt;= 10)</div><div class="line">  {</div><div class="line">     <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="comment">// Effectuer une nouvel essai</span></div><div class="line">  ...</div><div class="line">  ...</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="classe-iteration-avec-condition-en-fin"></a>
+La classe IterationAvecConditionEnFin</h1>
+<p>Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées à la fin** de l'itération.</p>
+<p>Généralement, ce type d'itération se code avec une instruction <code>do</code> <code></code>.. <code>while</code> et la ConditionDeBoucle correspond alors à une ConditionDeContinuation : </p><div class="fragment"><div class="line"><span class="keywordflow">do</span> </div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line">}</div><div class="line"><span class="keywordflow">while</span> (nombre &lt;= 0);</div></div><!-- fragment --><p>On peut toutefois trouver d'autres formes (moins appropriées) dans lesquelles l'IterationAvecConditionEnFin est codée avec un <code>while</code> ou un <code>for</code> dévié de leur usage initial. Dans ce cas, la ConditionDeBoucle prend la forme d'une ConditionDArret : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (<span class="keyword">true</span>)</div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line">}</div></div><!-- fragment --><p>ou encore : </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> ( ; ; )</div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="classe-iteration-avec-condition-au-milieu"></a>
+La classe IterationAvecConditionAuMilieu</h1>
+<p>Cette classe représente des itérations intégrant une ou plusieurs ConditionDeBoucle regroupées et évaluées en plein milieu** de l'itération, c'est-à-dire, ni au début, ni à la fin.</p>
+<p>Peu de langages de programmation proposent des instructions spécialisées pour traiter ce cas de figure. Le langage Ada propose par exemple l'instruction <code>loop</code> <code></code>.. <code>end</code> <code>loop</code> qui ne présume pas de la position de la condition d'arrêt (contrairement à un <code>while</code> ou un <code>do</code> <code></code>.. \ while) : </p><div class="fragment"><div class="line">loop</div><div class="line">   Put(<span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>) ; </div><div class="line">   Get-Line(nombre);</div><div class="line">   exit when nombre &gt; 0;</div><div class="line">   nbreSaisiesErronees := nbreSaisiesErronees + 1;</div><div class="line">end loop;</div></div><!-- fragment --><p><br />
+ Avec la plupart des langages de programmation qui ne proposent pas d'instruction spécialisée pour traiter ce cas de figure, il est nécessaire de dévier une instruction répétitive de son usage initial pour la transformer en itération infinie et dans laquelle on insère, au niveau du corps, une ConditionDArret : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (<span class="keyword">true</span>)</div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  nbreSaisiesErronees++;</div><div class="line">}</div></div><!-- fragment --><p>ou encore : </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> ( ; ; )</div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="classe-iteration-avec-plusieurs-conditions"></a>
+La classe IterationAvecConditionsADifferentsMoments</h1>
+<p>Cette classe représente tous les autres cas de figure qui ne rentrent pas dans les cas précédents.</p>
+<p>Ce type d'itération est caractérisé par la présence de plusieurs ConditionDeBoucle qui peuvent prendre la forme de ConditionDeContinuation et/ou de ConditionDArret, bien qu'il soit recommandé de ne pas les mélanger. Ci-dessous quelques exemples :</p>
+<p>Itération composée uniquement de ConditionDArret : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (<span class="keyword">true</span>)</div><div class="line">{</div><div class="line">  <span class="keywordflow">if</span> (nbEssais &gt;= 10)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line">  </div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  nbEssais++;</div><div class="line">}</div></div><!-- fragment --><p>La même itération mélangeant ConditionDeContinuation et ConditionDArret : </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (nbEssais &lt; 10)</div><div class="line">{</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Entrer un nombre positif : &quot;</span>;</div><div class="line">  cin &gt;&gt; nombre;</div><div class="line">  </div><div class="line">  <span class="keywordflow">if</span> (nombre &gt; 0)</div><div class="line">  {</div><div class="line">    <span class="keywordflow">break</span>;</div><div class="line">  }</div><div class="line"></div><div class="line">  nbEssais++;</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 30 Mai 2021 11:12:29 pour Code Explorer par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+        <script type="text/javascript" src="doxy-boot.js"></script>
+</html>
